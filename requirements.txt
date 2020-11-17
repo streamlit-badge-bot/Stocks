@@ -20,3 +20,4 @@ wincertstore==0.2
 yfinance==0.1.55
 matplotlib==3.3.3
 beautifulsoup4==4.9.3
+pandas-profiling==1.4

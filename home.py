@@ -99,13 +99,13 @@ def Home():
         """)
         today = st.date_input('Today is', datetime.datetime.now())
         page_bg_img = '''
-        <style>
-        body {
-        background-image: url("https://images.pexels.com/photos/4040587/pexels-photo-4040587.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000");
-        background-size: cover;
-        }
-        </style>
-        '''
+            <style>
+            body {
+            background-image: url("https://images.pexels.com/photos/4040587/pexels-photo-4040587.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000");
+            background-size: cover;
+            }
+            </style>
+            '''
         footer_temp1 = """
             <!-- CSS  -->
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

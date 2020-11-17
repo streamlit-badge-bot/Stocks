@@ -289,7 +289,7 @@ def Portfolio():
         st.set_option('deprecation.showPyplotGlobalUse', False)
         st.pyplot()
 
-
+#Differente models to predict the price.
 def Prediction_model():
     page_bg_img = '''
     <style>

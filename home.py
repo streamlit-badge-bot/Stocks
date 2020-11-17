@@ -14,12 +14,23 @@ import requests
 from requests import get
 from bs4 import BeautifulSoup
 
+#Profit
+from pandas_profiling import ProfileReport
+from streamlit_pandas_profiling import st_profile_report
+
+#Portfolio
+import numpy as np
+import yfinance 
+import yfinance as yf 
+yf.pdr_override()
+plt.style.use('fivethirtyeight')
+
 def main():
     # Register your pages
     pages = {
         # "Home": Home,
         "Index": Index,
-        # "Portfolio": Portfolio,
+        "Portfolio": Portfolio,
         # "Prediction_model": Prediction_model,
         # "Profit": Profit,
         # 'Statement': Statement,
@@ -83,72 +94,72 @@ def Index():
         st.set_option('deprecation.showPyplotGlobalUse', False)
         st.pyplot()
 # ...
-# def Portfolio():
-#     page_bg_img = '''
-#     <style>
-#     body {
-#     background-image: url("https://images.pexels.com/photos/2748756/pexels-photo-2748756.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000");
-#     background-size: cover;
-#     }
-#     </style>
-#     '''
-#     st.markdown(page_bg_img, unsafe_allow_html=True)
-#     symbols = 'https://raw.githubusercontent.com/Moly-malibu/financesApp/main/bxo_lmmS1.csv'
-#     df = pd.read_csv(symbols)
-#     st.markdown("<h1 style='text-align: center; color: #002966;'>Portfolio</h1>", unsafe_allow_html=True)
-#     st.write(""" Make your ***own Portfolio*** with minimum 5 companies and analyze what will be your profit.""")
-#     company = tickerSymbol1 = st.sidebar.multiselect("Select minimu 5 Companies to creare the Portfolio", (df['Symbol']))
-#     if company:
-#         button_clicked = st.sidebar.button("GO")
-#         stockStarData = st.date_input("Select Date when you started to investing and create your Portfolio:")
-#         numAssets = len(tickerSymbol1)
-#         st.write('***you have*** ' +str(numAssets) + ' ***Assets in your Portafolio.***')
-#         def getmyportfolio(stock=tickerSymbol1, start=stockStarData, end=None):
-#             data = yf.download(tickerSymbol1, start=start, end=end)['Adj Close']
-#             return data
-#         my_stocks = getmyportfolio(tickerSymbol1)
-#         st.write(my_stocks)
-#         daily_return = my_stocks.pct_change(1)
-#         daily_return.corr()
-#         daily_return.cov()
-#         daily_return.var()
-#         daily_return.std()
-#         st.write('***Stock Return ***',daily_return)
-#         st.write('***Stock Correlation ***',daily_return.corr())
-#         st.write('***Stock Covariance Matrix for Return***',daily_return.cov())
-#         st.write('***Stock Variance ***',daily_return.var())
-#         st.write('***Stock Volatility ***', daily_return.std())
-#     #Visualization
-#         plt.figure(figsize=(12, 4.5))
-#         for c in daily_return.columns.values:
-#             plt.plot(daily_return.index, daily_return[c], lw=2, label=c)
-#         plt.legend(loc='upper right', fontsize=10)
-#         plt.title('Volatility')
-#         plt.ylabel('Dayly Return')
-#         plt.xlabel('Date')
-#         plt.style.use('dark_background')
-#         st.set_option('deprecation.showPyplotGlobalUse', False)
-#         st.pyplot()
-#     #get Growth Investment
-#         dailyMeanSimpleReturns = daily_return.mean()
-#         st.write('***Daily Mean Simple Return:*** ', dailyMeanSimpleReturns)
-#         randomWeights = np.array([0.4, 0.1, 0.3, 0.1, 0.1])
-#         portfoliosimpleReturn = np.sum(dailyMeanSimpleReturns*randomWeights)
-#         st.write('***Daily Expected Portfolio Return:*** '+str(portfoliosimpleReturn))
-#         st.write('***Expected Annualised Portfolio Return:*** ' + str(portfoliosimpleReturn*253))
-#         dailyCumulSimpleReturn = (daily_return+1).cumprod()
-#         st.write('***Growth of Investment:*** ', dailyCumulSimpleReturn)
-#     #Visualization
-#         plt.figure(figsize=(12.2, 4.5))
-#         for c in dailyCumulSimpleReturn.columns.values:
-#             plt.plot(dailyCumulSimpleReturn.index, dailyCumulSimpleReturn[c], lw=2, label=c)
-#         plt.legend(loc='upper left', fontsize=10)
-#         plt.xlabel('Date')
-#         plt.ylabel('Growth fo $1 Investment')
-#         plt.title('Daily Cumulative Returns')
-#         st.set_option('deprecation.showPyplotGlobalUse', False)
-#         st.pyplot()
-    # ...
+def Portfolio():
+    page_bg_img = '''
+    <style>
+    body {
+    background-image: url("https://images.pexels.com/photos/2748756/pexels-photo-2748756.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000");
+    background-size: cover;
+    }
+    </style>
+    '''
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+    symbols = 'https://raw.githubusercontent.com/Moly-malibu/financesApp/main/bxo_lmmS1.csv'
+    df = pd.read_csv(symbols)
+    st.markdown("<h1 style='text-align: center; color: #002966;'>Portfolio</h1>", unsafe_allow_html=True)
+    st.write(""" Make your ***own Portfolio*** with only 5 companies and analyze what will be your profit.""")
+    company = tickerSymbol1 = st.sidebar.multiselect("Select minimu 5 Companies to creare the Portfolio", (df['Symbol']))
+    if company:
+        button_clicked = st.sidebar.button("GO")
+        stockStarData = st.date_input("Select Date when you started to investing and create your Portfolio:")
+        numAssets = len(tickerSymbol1)
+        st.write('***you have*** ' +str(numAssets) + ' ***Assets in your Portafolio.***')
+        def getmyportfolio(stock=tickerSymbol1, start=stockStarData, end=None):
+            data = yf.download(tickerSymbol1, start=start, end=end)['Adj Close']
+            return data
+        my_stocks = getmyportfolio(tickerSymbol1)
+        st.write(my_stocks)
+        daily_return = my_stocks.pct_change(1)
+        daily_return.corr()
+        daily_return.cov()
+        daily_return.var()
+        daily_return.std()
+        st.write('***Stock Return ***',daily_return)
+        st.write('***Stock Correlation ***',daily_return.corr())
+        st.write('***Stock Covariance Matrix for Return***',daily_return.cov())
+        st.write('***Stock Variance ***',daily_return.var())
+        st.write('***Stock Volatility ***', daily_return.std())
+    #Visualization
+        plt.figure(figsize=(12, 4.5))
+        for c in daily_return.columns.values:
+            plt.plot(daily_return.index, daily_return[c], lw=2, label=c)
+        plt.legend(loc='upper right', fontsize=10)
+        plt.title('Volatility')
+        plt.ylabel('Dayly Return')
+        plt.xlabel('Date')
+        plt.style.use('dark_background')
+        st.set_option('deprecation.showPyplotGlobalUse', False)
+        st.pyplot()
+    #get Growth Investment
+        dailyMeanSimpleReturns = daily_return.mean()
+        st.write('***Daily Mean Simple Return:*** ', dailyMeanSimpleReturns)
+        randomWeights = np.array([0.4, 0.1, 0.3, 0.1, 0.1])
+        portfoliosimpleReturn = np.sum(dailyMeanSimpleReturns*randomWeights)
+        st.write('***Daily Expected Portfolio Return:*** '+str(portfoliosimpleReturn))
+        st.write('***Expected Annualised Portfolio Return:*** ' + str(portfoliosimpleReturn*253))
+        dailyCumulSimpleReturn = (daily_return+1).cumprod()
+        st.write('***Growth of Investment:*** ', dailyCumulSimpleReturn)
+    #Visualization
+        plt.figure(figsize=(12.2, 4.5))
+        for c in dailyCumulSimpleReturn.columns.values:
+            plt.plot(dailyCumulSimpleReturn.index, dailyCumulSimpleReturn[c], lw=2, label=c)
+        plt.legend(loc='upper left', fontsize=10)
+        plt.xlabel('Date')
+        plt.ylabel('Growth fo $1 Investment')
+        plt.title('Daily Cumulative Returns')
+        st.set_option('deprecation.showPyplotGlobalUse', False)
+        st.pyplot()
+    ...
 
 if __name__ == "__main__":
    main()

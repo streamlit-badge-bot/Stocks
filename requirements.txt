@@ -19,4 +19,4 @@ virtualenv-clone==0.5.4
 wincertstore==0.2
 yfinance==0.1.55
 matplotlib==3.3.3
-bs4==4.9.3
+bs4==4.9.3.4

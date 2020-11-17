@@ -147,44 +147,6 @@ def Home():
             """
         components.html(footer_temp1,height=500)
 
-        footer_temp2 = """
-            <!-- CSS  -->
-            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-            <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-            <footer class="background-color: red">
-                <div class="container" id="About App">
-                <div class="row">
-                    <div class="col l6 s12">
-                    </div>
-            <div class="col l3 s12">
-                    <h5 class="black-text">Connect With Me</h5>
-                    <ul>
-                        <a href="http://www.monicadatascience.com/" target="#002966" class="black-text">
-                        ❤<i class="❤"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/monica-bustamante-b2ba3781/3" target="#002966" class="black-text">
-                        <i class="fab fa-linkedin fa-4x"></i>
-                    </a>
-                    <a href="https://github.com/Moly-malibu/financesApp" target="#002966" class="black-text">
-                        <i class="fab fa-github-square fa-4x"></i>
-                    </a>
-                    </ul>
-                    </div>
-                </div>
-                </div>
-                <div class="footer-copyright">
-                <div class="container">
-                Made by <a class="black-text text-lighten-3" href="http://www.monicadatascience.com/">Monica Bustamante</a><br/>
-                <a class="black-text text-lighten-3" href=""> @Copyrigh</a>
-                </div>
-                </div>
-           
-            </footer>
-            """
-        components.html(footer_temp2,height=700)
-            
     if __name__ == "__main__":
         main()
 

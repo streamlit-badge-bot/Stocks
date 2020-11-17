@@ -37,7 +37,7 @@ def main():
         # "Stock": Stock,
     }
 
-    st.sidebar.title("App with pages")
+    st.sidebar.title("Menu")
     page = st.sidebar.selectbox("Select your page", tuple(pages.keys()))
     pages[page]()
 

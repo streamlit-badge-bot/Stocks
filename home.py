@@ -93,7 +93,8 @@ def Index():
         plt.title("Company Stock")
         st.set_option('deprecation.showPyplotGlobalUse', False)
         st.pyplot()
-# ...
+
+#Portfolio
 def Portfolio():
     page_bg_img = '''
     <style>
@@ -159,7 +160,6 @@ def Portfolio():
         plt.title('Daily Cumulative Returns')
         st.set_option('deprecation.showPyplotGlobalUse', False)
         st.pyplot()
-    ...
 
 if __name__ == "__main__":
    main()

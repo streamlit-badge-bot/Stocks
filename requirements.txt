@@ -24,4 +24,4 @@ pandas-profiling==1.4
 streamlit-pandas-profiling==0.0.6
 sklearn==0.0
 Keras==3.1.0
- 
+Tensorflow==

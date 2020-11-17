@@ -41,6 +41,7 @@ def main():
     page = st.sidebar.selectbox("Select your page", tuple(pages.keys()))
     pages[page]()
 
+#Analysis stocks companies by close and volume.
 def Index(): 
     page_bg_img = '''
     <style>

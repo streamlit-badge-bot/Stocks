@@ -62,7 +62,7 @@ from requests.api import options
 import os
 
 def main():
-    # Register your pages
+    # Register pages
     pages = {
         "Home": Home,
         "Index": Index,
@@ -73,7 +73,7 @@ def main():
         "Profit": Profit,
     }
     st.sidebar.title("Menu")
-    page = st.sidebar.selectbox("Select your page", tuple(pages.keys()))
+    page = st.sidebar.selectbox("Select Menu", tuple(pages.keys()))
     pages[page]()
 
 def Home():
@@ -101,11 +101,12 @@ def Home():
         page_bg_img = '''
             <style>
             body {
-            background-image: url("https://images.pexels.com/photos/4040587/pexels-photo-4040587.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000");
+            background-image: url("https://images.pexels.com/photos/1024613/pexels-photo-1024613.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000");
             background-size: cover;
             }
             </style>
             '''
+        st.markdown(page_bg_img, unsafe_allow_html=True)
         footer_temp1 = """
             <!-- CSS  -->
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

@@ -8,6 +8,7 @@ unicorn = "*"
 yfinance = "*"
 matplotlib = "*"
 beautifulsoup4 = "*"
+bs4 = "*"
 
 [dev-packages]
 

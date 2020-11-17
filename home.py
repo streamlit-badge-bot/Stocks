@@ -2,6 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 import sqlite3
 import pandas as pd
+import streamlit
 
 #Index
 from numpy.lib.shape_base import column_stack

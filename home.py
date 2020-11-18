@@ -19,6 +19,7 @@ from bs4 import BeautifulSoup
 from pandas_profiling import ProfileReport
 from streamlit_pandas_profiling import st_profile_report
 
+
 #Portfolio
 import numpy as np
 import yfinance 

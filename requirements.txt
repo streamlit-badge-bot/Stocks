@@ -27,3 +27,4 @@ Keras==2.4.3
 tensorflow==2.3.0
 yahoofinancials==1.6
 yahoo-fin==0.8.6
+mplfinance==0.12.7a0

@@ -73,7 +73,7 @@ def main():
         "Stock": Stock,
         "Profit": Profit,
     }
-    st.sidebar.title("Menu")
+    st.sidebar.title("Companies Analysis")
     page = st.sidebar.selectbox("Select Menu", tuple(pages.keys()))
     pages[page]()
 

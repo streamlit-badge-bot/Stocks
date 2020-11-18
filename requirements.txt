@@ -20,7 +20,7 @@ wincertstore==0.2
 yfinance==0.1.55
 matplotlib==3.3.3
 beautifulsoup4==4.9.3
-pandas-profiling==1.4
+pandas-profiling==2.9.0
 streamlit-pandas-profiling==0.0.6
 sklearn==0.0
 Keras==2.4.3

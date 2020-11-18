@@ -26,3 +26,4 @@ sklearn==0.0
 Keras==2.4.3
 tensorflow==2.3.0
 yahoofinancials==1.6
+yahoo-fin==0.8.6

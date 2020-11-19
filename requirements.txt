@@ -31,4 +31,3 @@ yahoo-fin==0.8.6
 mplfinance==0.12.7a0
 requests-html==0.10.0
 DateTime==4.3
-streamlit==0.47.0

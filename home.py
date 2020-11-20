@@ -264,7 +264,7 @@ def Portfolio():
             st.write('***you have*** ' +str(numAssets) + ' ***Assets in your Portafolio.***')
             data = yf.download(tickerSymbol1, start=start, end=end)['Adj Close']
             return data
-            if data.empty == True:
+            if not data.empty == True:
                 st.write("No data available")
             else:
                 st.write(data)

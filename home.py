@@ -241,19 +241,19 @@ def Portfolio():
     df = pd.read_csv(symbols)
     st.markdown("<h1 style='text-align: center; color: #002966;'>Portfolio</h1>", unsafe_allow_html=True)
     st.write(""" Make your ***own Portfolio*** with 5 companies and analyze what will be your profit.""")
-    st.write("""***Instructions:***""") 
-    st.write(
-        """
-        - Select 5 companies where you want to invest or in which you have invested.   
+    # st.write("""***Instructions:***""") 
+    # st.write(
+    #     """
+    #     - Select 5 companies where you want to invest or in which you have invested.   
 
-        - Select Date.
+    #     - Select Date.
 
-        ***Note***
+    #     ***Note***
 
-        - These date and company selection options are open and require to be filled out correctly in order not to receive NAN (Only means that the model doesn't have data) 
-        - If you get an error is because of the need to select only 5 companies maximum.
-        ---
-        """)
+    #     - These date and company selection options are open and require to be filled out correctly in order not to receive NAN (Only means that the model doesn't have data) 
+    #     - If you get an error is because of the need to select only 5 companies maximum.
+    #     ---
+    #     """)
     
     stockStarData = st.sidebar.date_input("Select Date when you started to investing:")
     company = tickerSymbol1 = st.sidebar.multiselect("Select only 5 Companies to create the Portfolio", (df['Symbol']))
@@ -264,6 +264,10 @@ def Portfolio():
             st.write('***you have*** ' +str(numAssets) + ' ***Assets in your Portafolio.***')
             data = yf.download(tickerSymbol1, start=start, end=end)['Adj Close']
             return data
+            if data.empty == True:
+                st.write("No data available")
+            else:
+                st.write(data)
         my_stocks = getmyportfolio(tickerSymbol1)
         st.write(my_stocks)
         daily_return = my_stocks.pct_change(1)

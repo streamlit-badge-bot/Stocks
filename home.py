@@ -266,8 +266,6 @@ def Portfolio():
             return data
             if not data.empty == True:
                 st.write("No data available")
-            else:
-                st.write(data)
         my_stocks = getmyportfolio(tickerSymbol1)
         st.write(my_stocks)
         daily_return = my_stocks.pct_change(1)

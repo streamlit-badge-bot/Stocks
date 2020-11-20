@@ -244,14 +244,14 @@ def Portfolio():
     st.write("""***Instructions:***""") 
     st.write(
         """
-        - Select 5 companies where you want to invest or in which you have invested, and you will see the profit that you will get.   
+        - Select 5 companies where you want to invest or in which you have invested.   
 
         - Select Date.
 
         ***Note***
 
         - These date and company selection options are open and require to be filled out correctly in order not to receive NAN (Only means that the model doesn't have data) 
-        - if you get an error is because of the need to select only 5 companies maximum.
+        - If you get an error is because of the need to select only 5 companies maximum.
         ---
         """)
     

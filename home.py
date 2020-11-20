@@ -751,12 +751,12 @@ def Stock():
             temp = temp.iloc[:,:2]
             temp.columns = ["Attribute", "Recent"]
             stats[ticker] = temp
-        stats
+        # stats
         combined = pd.concat(stats)
         combined = combined.reset_index()
         del combined["level_1"]
         combined.columns = ["Ticker", "Attribute", "Recent"]
-        # st.write(combined) 
+        st.write(combined) 
     # ...
 
 if __name__ == "__main__":

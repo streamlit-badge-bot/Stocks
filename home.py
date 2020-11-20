@@ -263,8 +263,8 @@ def Portfolio():
             numAssets = len(tickerSymbol1)
             st.write('***you have*** ' +str(numAssets) + ' ***Assets in your Portafolio.***')
             data = yf.download(tickerSymbol1, start=start, end=end)['Adj Close']
-            if company is None:
-                company = ['AAPL', 'AMZN', 'AA', 'A', 'AC']
+            if date is None:
+                raise RuntimeError("Select only 5 companies.")
             return data
         my_stocks = getmyportfolio(tickerSymbol1)
         st.write(my_stocks)

@@ -240,7 +240,7 @@ def Portfolio():
     symbols = 'https://raw.githubusercontent.com/Moly-malibu/Stocks/main/bxo_lmmS1.csv'
     df = pd.read_csv(symbols)
     st.markdown("<h1 style='text-align: center; color: #002966;'>Portfolio</h1>", unsafe_allow_html=True)
-    st.write(""" ***Instructions:""") 
+    st.write("""***Instructions:***""") 
     st.write(
         """
         - Select 5 companies where you want to invest or in which you have invested, and you will see the profit that you will get.   
@@ -253,9 +253,9 @@ def Portfolio():
     company = tickerSymbol1 = st.sidebar.multiselect("Select only 5 Companies to create the Portfolio", (df['Symbol']))
     if company:
         button_clicked = st.sidebar.button("GO")
-        numAssets = len(tickerSymbol1)
-        st.write('***you have*** ' +str(numAssets) + ' ***Assets in your Portafolio.***')
         def getmyportfolio(stock=tickerSymbol1, start=stockStarData, end=None):
+            numAssets = len(tickerSymbol1)
+            st.write('***you have*** ' +str(numAssets) + ' ***Assets in your Portafolio.***')
             data = yf.download(tickerSymbol1, start=start, end=end)['Adj Close']
             return data
         my_stocks = getmyportfolio(tickerSymbol1)

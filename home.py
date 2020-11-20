@@ -241,19 +241,14 @@ def Portfolio():
     df = pd.read_csv(symbols)
     st.markdown("<h1 style='text-align: center; color: #002966;'>Portfolio</h1>", unsafe_allow_html=True)
     st.write(""" Make your ***own Portfolio*** with 5 companies and analyze what will be your profit.""")
-    # st.write("""***Instructions:***""") 
-    # st.write(
-    #     """
-    #     - Select 5 companies where you want to invest or in which you have invested.   
+    st.write("""***Instructions:***""") 
+    st.write(
+        """
+        - Select 5 companies where you want to invest or Analysis.  ('others' it needs more companies)  
 
-    #     - Select Date.
-
-    #     ***Note***
-
-    #     - These date and company selection options are open and require to be filled out correctly in order not to receive NAN (Only means that the model doesn't have data) 
-    #     - If you get an error is because of the need to select only 5 companies maximum.
-    #     ---
-    #     """)
+        - Select Date. (NAN empty date)
+        ---
+        """)
     
     stockStarData = st.sidebar.date_input("Select Date when you started to investing:")
     company = tickerSymbol1 = st.sidebar.multiselect("Select only 5 Companies to create the Portfolio", (df['Symbol']))

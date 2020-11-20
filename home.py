@@ -256,7 +256,9 @@ def Portfolio():
     #     """)
     
     stockStarData = st.sidebar.date_input("Select Date when you started to investing:")
-    company = tickerSymbol1 = st.sidebar.multiselect("Select only 5 Companies to create the Portfolio", (df['Symbol']), default=['AAPL'])
+    company = tickerSymbol1 = st.sidebar.multiselect("Select only 5 Companies to create the Portfolio", (df['Symbol']))
+    if company is None:
+        company = ['AAPL', 'AMZN', 'AA', 'A', 'AC']
     button_clicked = st.sidebar.button("GO")
     if company:
         def getmyportfolio(stock=tickerSymbol1, start=stockStarData, end=None):

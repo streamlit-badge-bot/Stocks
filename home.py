@@ -240,6 +240,7 @@ def Portfolio():
     symbols = 'https://raw.githubusercontent.com/Moly-malibu/Stocks/main/bxo_lmmS1.csv'
     df = pd.read_csv(symbols)
     st.markdown("<h1 style='text-align: center; color: #002966;'>Portfolio</h1>", unsafe_allow_html=True)
+    st.write(""" Make your ***own Portfolio*** with 5 companies and analyze what will be your profit.""")
     st.write("""***Instructions:***""") 
     st.write(
         """
@@ -249,10 +250,11 @@ def Portfolio():
 
         ***Note***
 
-        These date and company selection options are open and require to be filled out correctly in order not to receive NAN (Only means that the model doesn't have data) or if you get an error is because of the need to select only 5 companies maximum.
+        - These date and company selection options are open and require to be filled out correctly in order not to receive NAN (Only means that the model doesn't have data) 
+        - if you get an error is because of the need to select only 5 companies maximum.
         ---
         """)
-    st.write(""" Make your ***own Portfolio*** with 5 companies and analyze what will be your profit.""")
+    
     stockStarData = st.sidebar.date_input("Select Date when you started to investing:")
     company = tickerSymbol1 = st.sidebar.multiselect("Select only 5 Companies to create the Portfolio", (df['Symbol']))
     button_clicked = st.sidebar.button("GO")

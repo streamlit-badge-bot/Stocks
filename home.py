@@ -756,7 +756,7 @@ def Stock():
         combined = combined.reset_index()
         del combined["level_1"]
         combined.columns = ["Ticker", "Attribute", "Recent"]
-        st.write(combined) 
+        # st.write(combined) 
     # ...
 
 if __name__ == "__main__":

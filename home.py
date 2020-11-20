@@ -241,7 +241,7 @@ def Portfolio():
     df = pd.read_csv(symbols)
     st.markdown("<h1 style='text-align: center; color: #002966;'>Portfolio</h1>", unsafe_allow_html=True)
     st.write(""" Make your ***own Portfolio*** with only 5 companies and analyze what will be your profit.""")
-    company = tickerSymbol1 = st.sidebar.multiselect("Instruction", 'n/' "Select only 5 Companies to creare the Portfolio", 'n/', 'Select Date' (df['Symbol']))
+    company = tickerSymbol1 = st.sidebar.multiselect("Select only 5 Companies to creare the Portfolio", (df['Symbol']))
     if company:
         button_clicked = st.sidebar.button("GO")
         stockStarData = st.sidebar.date_input("Select Date when you started to investing and create your Portfolio:")

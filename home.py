@@ -83,7 +83,8 @@ def Home():
         st.markdown("<h1 style='text-align: center; color: #002966;'>Finances App for streamlines decisions</h1>", unsafe_allow_html=True)
         st.write(
         """
-        Artificial Intelligence helps you to perform a successful future, taking the correct decisions!
+        Artificial Intelligence helps you to perform a successful future, taking the correct decisions! 
+        
         Here you will get Financial information of more than *** 3,400 companies***, fast, easy, and simple:
 
         - Chart Analysis of single and multiple companies' stocks.  

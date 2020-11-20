@@ -251,25 +251,25 @@ def Portfolio():
     st.write(""" Make your ***own Portfolio*** with 5 companies and analyze what will be your profit.""")
     stockStarData = st.sidebar.date_input("Select Date when you started to investing:")
     company = tickerSymbol1 = st.sidebar.multiselect("Select only 5 Companies to create the Portfolio", (df['Symbol']))
+    button_clicked = st.sidebar.button("GO")
     if company:
-        button_clicked = st.sidebar.button("GO")
         def getmyportfolio(stock=tickerSymbol1, start=stockStarData, end=None):
             numAssets = len(tickerSymbol1)
             st.write('***you have*** ' +str(numAssets) + ' ***Assets in your Portafolio.***')
             data = yf.download(tickerSymbol1, start=start, end=end)['Adj Close']
             return data
-        my_stocks = getmyportfolio(tickerSymbol1)
-        st.write(my_stocks)
-        daily_return = my_stocks.pct_change(1)
-        daily_return.corr()
-        daily_return.cov()
-        daily_return.var()
-        daily_return.std()
-        st.write('***Stock Return ***',daily_return)
-        st.write('***Stock Correlation ***',daily_return.corr())
-        st.write('***Stock Covariance Matrix for Return***',daily_return.cov())
-        st.write('***Stock Variance ***',daily_return.var())
-        st.write('***Stock Volatility ***', daily_return.std())
+            my_stocks = getmyportfolio(tickerSymbol1)
+            st.write(my_stocks)
+            daily_return = my_stocks.pct_change(1)
+            daily_return.corr()
+            daily_return.cov()
+            daily_return.var()
+            daily_return.std()
+            st.write('***Stock Return ***',daily_return)
+            st.write('***Stock Correlation ***',daily_return.corr())
+            st.write('***Stock Covariance Matrix for Return***',daily_return.cov())
+            st.write('***Stock Variance ***',daily_return.var())
+            st.write('***Stock Volatility ***', daily_return.std())
     #Visualization
         plt.figure(figsize=(12, 4.5))
         for c in daily_return.columns.values:

@@ -256,15 +256,13 @@ def Portfolio():
     #     """)
     
     stockStarData = st.sidebar.date_input("Select Date when you started to investing:")
-    company = tickerSymbol1 = st.sidebar.multiselect("Select only 5 Companies to create the Portfolio", (df['Symbol']))
+    company = tickerSymbol1 = st.sidebar.multiselect("Select only 5 Companies to create the Portfolio", (df['Symbol']), default=None)
     button_clicked = st.sidebar.button("GO")
     if company:
         def getmyportfolio(stock=tickerSymbol1, start=stockStarData, end=None):
             numAssets = len(tickerSymbol1)
             st.write('***you have*** ' +str(numAssets) + ' ***Assets in your Portafolio.***')
             data = yf.download(tickerSymbol1, start=start, end=end)['Adj Close']
-            if date is None:
-                raise RuntimeError("Select only 5 companies.")
             return data
         my_stocks = getmyportfolio(tickerSymbol1)
         st.write(my_stocks)

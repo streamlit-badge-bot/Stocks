@@ -741,23 +741,5 @@ def Stock():
                 st.write("No data available")
             else:
                 st.write(display_evaluation)
-    company = st.sidebar.checkbox("Compared Status")
-    if company:
-        st.markdown("<h1 style='text-align: center; color: #002966;'>Compared Status </h1>", unsafe_allow_html=True)
-        list = si.tickers_dow()
-        stats = {}
-        for ticker in list:
-            temp = si.get_stats_valuation(tickerSymbol2)
-            temp = temp.iloc[:,:2]
-            temp.columns = ["Attribute", "Recent"]
-            stats[ticker] = temp
-        # stats
-        combined = pd.concat(stats)
-        combined = combined.reset_index()
-        del combined["level_1"]
-        combined.columns = ["Ticker", "Attribute", "Recent"]
-        st.write(combined) 
-    # ...
-
 if __name__ == "__main__":
    main()

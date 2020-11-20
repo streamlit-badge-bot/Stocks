@@ -80,21 +80,21 @@ def main():
 
 def Home():
     def main():
-        st.markdown("<h1 style='text-align: center; color: #002966;'>Finances Application for streamlines decisions</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='text-align: center; color: #002966;'>Finances App for streamlines decisions</h1>", unsafe_allow_html=True)
         st.write(
         """
         Artificial Intelligence helps you to perform a successful future, taking the correct decisions!
-        More the *** 3,400 companies*** financial information, fast and easy:
+        Here you will get Financial information of more than *** 3,400 companies***, fast, easy, and simple:
 
-        - Graph Analysis single and multiple companies stocks.  
+        - Chart Analysis of single and multiple companies' stocks.  
 
-        - Machine Learn Forcasting.
+        - Machine Learn Forecasting.
 
-        - Financial Analysis, Ratios and general information.
+        - Financial Analysis, Ratios, and general information.
 
-        - Financial Statement and Forcasting.
+        - Financial Statement and Forecast.
 
-        - Profilling each company.
+        - Profiling each company.
 
 
         ---

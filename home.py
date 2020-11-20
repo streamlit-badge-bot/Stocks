@@ -231,7 +231,7 @@ def Portfolio():
     page_bg_img = '''
     <style>
     body {
-    background-image: url("https://images.pexels.com/photos/2748756/pexels-photo-2748756.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000");
+    background-image: url("https://images.pexels.com/photos/2748757/pexels-photo-2748757.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000");
     background-size: cover;
     }
     </style>

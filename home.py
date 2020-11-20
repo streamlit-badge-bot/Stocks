@@ -256,7 +256,7 @@ def Portfolio():
     #     """)
     
     stockStarData = st.sidebar.date_input("Select Date when you started to investing:")
-    company = tickerSymbol1 = st.sidebar.multiselect("Select only 5 Companies to create the Portfolio", (df['Symbol']))
+    company = tickerSymbol1 = st.sidebar.multiselect("Select only 5 Companies to create the Portfolio", (df['Symbol']), default=['AAPL', 'A', 'AAL', 'AMZN', 'AC'])
     button_clicked = st.sidebar.button("GO")
     if company:
         def getmyportfolio(stock=tickerSymbol1, start=stockStarData, end=None):
@@ -264,8 +264,6 @@ def Portfolio():
             st.write('***you have*** ' +str(numAssets) + ' ***Assets in your Portafolio.***')
             data = yf.download(tickerSymbol1, start=start, end=end)['Adj Close']
             return data
-            if not data.empty == True:
-                st.write("No data available")
         my_stocks = getmyportfolio(tickerSymbol1)
         st.write(my_stocks)
         daily_return = my_stocks.pct_change(1)

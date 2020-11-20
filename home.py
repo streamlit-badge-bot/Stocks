@@ -80,7 +80,8 @@ def main():
 
 def Home():
     def main():
-        st.markdown("<h1 style='text-align: center; color: #002966;'>Finances App for streamlines decisions</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='text-align: center; color: #002966;'>Finances and Stocks App</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='text-align: center; color: #002966;'>for streamlines decisions</h1>", unsafe_allow_html=True)
         st.write(
         """
         Artificial Intelligence helps you to perform a successful future, taking the correct decisions! 

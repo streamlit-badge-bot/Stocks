@@ -246,6 +246,11 @@ def Portfolio():
         - Select 5 companies where you want to invest or in which you have invested, and you will see the profit that you will get.   
 
         - Select Date.
+
+        ***Note***
+
+        These date and company selection options are open and require to be filled out correctly in order not to receive 
+        NAN (Only means that the model doesn't have data) or if you get an error is because of the need to select only 5 companies maximum.
         ---
         """)
     st.write(""" Make your ***own Portfolio*** with 5 companies and analyze what will be your profit.""")

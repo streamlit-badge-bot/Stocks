@@ -90,15 +90,47 @@ def Home():
 
         - Chart Analysis of single and multiple companies' stocks.  
 
-        - Machine Learn Forecasting.
+        - Machine Learn Forecasting.  
 
-        - Financial Analysis, Ratios, and general information.
+                - Compared Forecasting
+                - Long Short Term Memory.
+                - Decision Tree Regression.
+                - Linear Regression.
 
-        - Financial Statement and Forecast.
+        -Portfolio: 
 
-        - Profiling each company.
-        
+                - Stock Return, 
+                - correlation, 
+                - volatility, 
+                - Growth of investment. 
 
+        - Financial Analysis: 
+                
+                - Ratios, 
+                - Monte Carlo Simulation
+                - Cash Flow
+                - Income Statement
+                - Balance Sheet
+                - Quote Table.
+                - Call Option.
+                
+
+        - Financial Information:
+
+                - Company Information.
+                - Company Share Asigned.
+                - Stocks Recommendations.
+                - Actions and Split.
+                - Statistics.
+                - Status of Evaluation.
+
+        - Profiling each company:
+
+                - Interactions in High, Low, Close, Volume and Dividens.
+                - Correlations: Pearson's r, Spearman's p, Kendalls's T, Phik (@K)
+                - Matrix.
+                - Heatmap.
+                - Dentrogram.
 
         ---
         """)
@@ -162,7 +194,7 @@ title_temp = """
 	  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 	  <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 	   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-	 <footer class="background-color: red">
+	 <footer class="background-color: grey">
 	    <div class="container" id="About App">
 	      <div class="row">
 	        <div class="col l6 s12">
@@ -187,7 +219,7 @@ def Index():
     symbols = 'https://raw.githubusercontent.com/Moly-malibu/Stocks/main/bxo_lmmS1.csv'
     df = pd.read_csv(symbols)
     st.markdown("<h1 style='text-align: center; color: #002966;'>Stock Price </h1>", unsafe_allow_html=True)
-    start = st.date_input("Please enter date begin Analysis: ") 
+    start = st.sidebar.date_input("Please enter date begin Analysis: ") 
     tickerSymbol = st.sidebar.selectbox('Stocks Close and Volume price by Company', (df['Symbol']))
     tickerData = yf.Ticker(tickerSymbol)
     tickerDf = tickerData.history(period='id', start=start, end=None)
@@ -382,7 +414,7 @@ def Prediction_model():
         plt.legend(['train', 'Val', 'Predictions'], loc='upper left')
         st.set_option('deprecation.showPyplotGlobalUse', False)
         st.pyplot()
-        st.markdown("<h1 style='text-align: center; color: #002966;'>Forcasting the Price Stocks</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='text-align: center; color: #002966;'>Forecasting the Price Stocks</h1>", unsafe_allow_html=True)
         st.write(""" 
         Using keras Long Short Term Memory (LSTM) model that permit to store past information to predict the future price of stocks.
         """)
@@ -457,7 +489,7 @@ def Prediction_model():
         st.write('Predictioin by LR:', predictions)
         st.write('Accuracy:', lr.score(x_train, y_train))
         st.write('linear Regression confidence:', lr_confidence)
-    st.markdown("<h1 style='text-align: center; color: #002966;'>Compared Forcasting</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: #002966;'>Compared Forecasting</h1>", unsafe_allow_html=True)
     new_predict = tickerDf['Close']
     st.write(tickerDf)
     # ...
@@ -678,7 +710,7 @@ def Stock():
     st.write("""
     Financial information from the companies and Stocks by years!
     """)
-    start = st.date_input("range, dates to analysis")
+    start = st.sidebar.date_input("range, dates to analysis")
     st.sidebar.subheader("Index")
     tickerSymbol2 = st.sidebar.selectbox('Stocks by Company', (df['Symbol']))
     tickerData = yf.Ticker(tickerSymbol2)

@@ -86,7 +86,7 @@ def Home():
         """
         Artificial Intelligence helps you to perform a successful future, taking the correct decisions! 
         
-        Here you will get Financial information of more than *** 3,400 companies***, fast, easy, and simple:
+        Here you will get Financial information of more than *** 3,400 companies***, Fast, Easy, and Simple making decisions on constructing the portfolio used the Algorithms brings potential accurancy to trading:
 
         - ***Chart Analysis of single and multiple companies' stocks***.  
 
@@ -100,8 +100,12 @@ def Home():
         - ***Portfolio:*** 
 
                 - Stock Return, 
-                - correlation, 
-                - volatility, 
+                - Correlation, 
+                - Covariance Matrix for return.
+                - Variance.
+                - Volatility, 
+                - Dayily Expected Porfolio Return.
+                - Annualised Portfolio Return.
                 - Growth of investment. 
 
         - ***Financial Analysis:***
@@ -199,7 +203,7 @@ title_temp = """
 	      <div class="row">
 	        <div class="col l6 s12">
                 <h5 class="black-text">Artificial Intelligence</h5>
-	          <p class="grey-text text-lighten-4">Using Streamlit, Yahoo Finances, Sklearn, Tensorflow,  Keras, Pandas Profile. </p>
+	          <p class="grey-text text-lighten-4">Using Streamlit, Yahoo Finances, Sklearn, Tensorflow,  Keras, Pandas Profile, Numpy, Math, Data Visualization. </p>
 	        </div>     
 	  </footer>
 	"""

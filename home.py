@@ -88,23 +88,23 @@ def Home():
         
         Here you will get Financial information of more than *** 3,400 companies***, fast, easy, and simple:
 
-        - Chart Analysis of single and multiple companies' stocks.  
+        - # Chart Analysis of single and multiple companies' stocks.  
 
-        - Machine Learn Forecasting.  
+        - # Machine Learn Forecasting.  
 
                 - Compared Forecasting
                 - Long Short Term Memory.
                 - Decision Tree Regression.
                 - Linear Regression.
 
-        -Portfolio: 
+        -# Portfolio: 
 
                 - Stock Return, 
                 - correlation, 
                 - volatility, 
                 - Growth of investment. 
 
-        - Financial Analysis: 
+        - # Financial Analysis: 
                 
                 - Ratios, 
                 - Monte Carlo Simulation
@@ -115,7 +115,7 @@ def Home():
                 - Call Option.
                 
 
-        - Financial Information:
+        - # Financial Information:
 
                 - Company Information.
                 - Company Share Asigned.
@@ -124,7 +124,7 @@ def Home():
                 - Statistics.
                 - Status of Evaluation.
 
-        - Profiling each company:
+        - # Profiling each company:
 
                 - Interactions in High, Low, Close, Volume and Dividens.
                 - Correlations: Pearson's r, Spearman's p, Kendalls's T, Phik (@K)
@@ -150,7 +150,7 @@ def Home():
             <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
             <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-            <footer class="background-color: white">
+            <footer class="background-color: red">
                 <div class="container" id="About App">
                 <div class="row">
                     <div class="col l6 s12">
@@ -219,7 +219,7 @@ def Index():
     symbols = 'https://raw.githubusercontent.com/Moly-malibu/Stocks/main/bxo_lmmS1.csv'
     df = pd.read_csv(symbols)
     st.markdown("<h1 style='text-align: center; color: #002966;'>Stock Price </h1>", unsafe_allow_html=True)
-    start = st.sidebar.date_input("Please enter date begin Analysis: ") 
+    start = st.sidebar.date_input("Enter Date Begin Analysis: ") 
     tickerSymbol = st.sidebar.selectbox('Stocks Close and Volume price by Company', (df['Symbol']))
     tickerData = yf.Ticker(tickerSymbol)
     tickerDf = tickerData.history(period='id', start=start, end=None)

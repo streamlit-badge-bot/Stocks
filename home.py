@@ -710,7 +710,7 @@ def Stock():
     st.write("""
     Financial information from the companies and Stocks by years!
     """)
-    start = st.sidebar.date_input("dates to analysis")
+    start = st.sidebar.date_input("Date to Analysis")
     st.sidebar.subheader("Index")
     tickerSymbol2 = st.sidebar.selectbox('Stocks by Company', (df['Symbol']))
     tickerData = yf.Ticker(tickerSymbol2)

@@ -86,7 +86,9 @@ def Home():
         """
         Artificial Intelligence helps you to perform a successful future, taking the correct decisions! 
         
-        Here you will get Financial information of more than *** 3,400 companies***, Fast, Easy, and Simple making decisions on constructing the portfolio used the Algorithms brings potential accurancy to trading:
+        Here you will get Financial information of more than *** 3,400 companies***, Fast, Easy, and Simple  
+        
+        Making decisions on constructing the portfolio used the Algorithms that brings potential accurancy to trading:
 
         - ***Chart Analysis of single and multiple companies' stocks***.  
 

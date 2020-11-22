@@ -150,7 +150,7 @@ def Home():
             <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
             <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-            <footer class="background-color: grey">
+            <footer class="background-color: white">
                 <div class="container" id="About App">
                 <div class="row">
                     <div class="col l6 s12">
@@ -194,7 +194,7 @@ title_temp = """
 	  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 	  <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 	   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-	 <footer class="background-color: grey">
+	 <footer class="background-color: red">
 	    <div class="container" id="About App">
 	      <div class="row">
 	        <div class="col l6 s12">
@@ -710,7 +710,7 @@ def Stock():
     st.write("""
     Financial information from the companies and Stocks by years!
     """)
-    start = st.sidebar.date_input("range, dates to analysis")
+    start = st.sidebar.date_input("dates to analysis")
     st.sidebar.subheader("Index")
     tickerSymbol2 = st.sidebar.selectbox('Stocks by Company', (df['Symbol']))
     tickerData = yf.Ticker(tickerSymbol2)

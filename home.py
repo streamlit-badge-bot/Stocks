@@ -88,23 +88,23 @@ def Home():
         
         Here you will get Financial information of more than *** 3,400 companies***, fast, easy, and simple:
 
-        - # Chart Analysis of single and multiple companies' stocks.  
+        - ***Chart Analysis of single and multiple companies' stocks***.  
 
-        - # Machine Learn Forecasting.  
+        - ***Machine Learn Forecasting:***  
 
                 - Compared Forecasting
                 - Long Short Term Memory.
                 - Decision Tree Regression.
                 - Linear Regression.
 
-        -# Portfolio: 
+        - ***Portfolio:*** 
 
                 - Stock Return, 
                 - correlation, 
                 - volatility, 
                 - Growth of investment. 
 
-        - # Financial Analysis: 
+        - ***Financial Analysis:***
                 
                 - Ratios, 
                 - Monte Carlo Simulation
@@ -115,7 +115,7 @@ def Home():
                 - Call Option.
                 
 
-        - # Financial Information:
+        - ***Financial Information:***
 
                 - Company Information.
                 - Company Share Asigned.
@@ -124,7 +124,7 @@ def Home():
                 - Statistics.
                 - Status of Evaluation.
 
-        - # Profiling each company:
+        - ***Profiling each company:***
 
                 - Interactions in High, Low, Close, Volume and Dividens.
                 - Correlations: Pearson's r, Spearman's p, Kendalls's T, Phik (@K)
